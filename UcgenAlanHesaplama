@@ -1,0 +1,37 @@
+// patika.dev
+// patika adresim : app.patika.dev/mantis
+
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+       int a,b,c;
+
+       Scanner uzunluk = new Scanner(System.in);
+        System.out.print("1. Uzunluğu giriniz: ");
+        a = uzunluk.nextInt();
+
+        System.out.print("2. Uzunluğu giriniz: ");
+        b = uzunluk.nextInt();
+
+        System.out.print("3. Uzunluğu giriniz: ");
+        c = uzunluk.nextInt();
+
+        boolean karsilastirma = ((a<=0)||(b<=0)||(c<=0));
+
+        String cevap = karsilastirma ? "Lütfen 0'dan büyük sayı giriniz" :  "Sayılarınız Hesaplanıyor"; // sıfırdan küçük sayı girilmesine karşı uyarı
+
+        System.out.println(cevap);
+
+        double u = (a+ b+ c) / 2;
+
+        double alan = Math.sqrt(u*(u-a)*(u-b)*(u-c));
+
+        System.out.println("Alan : " + alan);
+
+
+      
+
+
+    }
+}

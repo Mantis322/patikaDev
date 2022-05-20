@@ -27,7 +27,7 @@ public class Main {
 
         int toplam = (mat + fizik + turkce +  kimya + tarih + muzik);
 
-        int sonuc = (toplam / 6) ;
+        double sonuc = (toplam / 6) ;
 
         System.out.println("Ortalama: " + sonuc);
 

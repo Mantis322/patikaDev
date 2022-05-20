@@ -1,0 +1,21 @@
+// patika dev profili : https://app.patika.dev/mantis
+
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+       double tutar;
+       double kdv= 0.18;
+
+       Scanner inp = new Scanner(System.in);
+        System.out.print("Kdv Hesaplanacak Tutarı Giriniz: ");
+        tutar = inp.nextDouble();
+        boolean karsilastirma = tutar > 1000;
+        double kosul =  karsilastirma ? (kdv = 0.08) : (kdv = 0.18);
+        double kdvTutari = tutar * kdv;
+        double kdvliTutar = tutar + kdvTutari;
+        System.out.println(kdvliTutar);
+
+
+    }
+}

@@ -1,0 +1,26 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+       double pi = 3.14;
+       double aci;
+       double yaricap;
+
+       Scanner inp = new Scanner(System.in);
+       System.out.print("Merkez açı ölçüsü giriniz: ");
+       aci = inp.nextDouble();
+
+        System.out.print("Yarıçap giriniz: ");
+        yaricap = inp.nextDouble();
+
+        double alan = (pi*(yaricap*yaricap)*aci)/360;
+
+        System.out.println("Alan :" + alan);
+
+
+
+
+
+
+    }
+}

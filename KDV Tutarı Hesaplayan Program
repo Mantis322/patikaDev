@@ -6,15 +6,16 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         double tutar;
-
-
+        
         Scanner inp = new Scanner(System.in);
         System.out.print("Kdv Hesaplanacak Tutarı Giriniz: ");
         tutar = inp.nextDouble();
+
         boolean karsilastirma = tutar > 1000;
         double kdv =  karsilastirma ? (0.08) : (0.18);
         double kdvTutari = tutar * kdv;
         double kdvliTutar = tutar + kdvTutari;
+
         System.out.println(kdvliTutar);
 
 

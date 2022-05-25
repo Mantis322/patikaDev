@@ -22,7 +22,7 @@ public class Main {
                 case 'E':
                     System.out.print("Lütfen yeni şifrenizi giriniz: ");
                     String newPassword = inp.nextLine();
-                    if(newPassword == passKontrol){
+                    if(newPassword.equals(passKontrol)){
                         System.out.println("Şifre oluşturulamadı, lütfen başka şifre giriniz.");
                     }else {
                         System.out.println("Şifreniz Başarı ile değiştirildi");

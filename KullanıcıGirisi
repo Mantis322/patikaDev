@@ -1,0 +1,43 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        String passKontrol = "patika";
+        String password;
+        char sifirlamaSecenegi;
+
+        Scanner inp = new Scanner(System.in);
+        System.out.print("Lütfen şifrenizi giriniz: ");
+        password = inp.nextLine();
+
+        if(password.equals(passKontrol)){
+            System.out.println("Hoşgeldiniz");
+        }else {
+            System.out.println("Yanlış Şifre girdiniz");
+            System.out.print("Şifrenizi sıfırlamak ister misiniz ? Evet için (E) Hayır için (H) yazınız:");
+
+            sifirlamaSecenegi = inp.next().toCharArray()[0];
+
+            switch (sifirlamaSecenegi){
+                case 'E':
+                    System.out.print("Lütfen yeni şifrenizi giriniz: ");
+                    String newPassword = inp.nextLine();
+                    if(newPassword == passKontrol){
+                        System.out.println("Şifre oluşturulamadı, lütfen başka şifre giriniz.");
+                    }else {
+                        System.out.println("Şifreniz Başarı ile değiştirildi");
+                        newPassword = passKontrol;
+                    }
+                    break;
+                case 'H':
+                    System.out.println("Sistemden çıkış yapıldı.");
+                    break;
+                default:
+                    System.out.println("Yanlış değer girdiniz.");
+                    break;
+            }
+        }
+        System.out.println("Program bitti.");
+
+    }
+}

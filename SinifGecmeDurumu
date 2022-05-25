@@ -1,0 +1,68 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        double mat,fizik,turkce,kimya,muzik;
+        int ortalamaSayma = 0;
+        double degerler = 0;
+
+        Scanner inp = new Scanner(System.in);
+
+        System.out.print("Lütfen Matematik Notunuzu Giriniz: ");
+        mat = inp.nextDouble();
+        if(mat<0 || mat>100){
+            System.out.println("Yanlış değer girdiniz.");
+        }else {
+            ortalamaSayma++;
+            degerler+=mat;
+        }
+
+        System.out.print("Lütfen Fizik Notunuzu Giriniz: ");
+        fizik = inp.nextDouble();
+        if(fizik<0 || fizik>100){
+            System.out.println("Yanlış değer girdiniz.");
+        }else {
+            ortalamaSayma++;
+            degerler+=fizik;
+        }
+
+        System.out.print("Lütfen türkçe notunuzu giriniz: ");
+        turkce = inp.nextDouble();
+        if(turkce<0 || turkce>100){
+            System.out.println("Yanlış değer girdiniz.");
+        }else {
+            ortalamaSayma++;
+            degerler+=turkce;
+        }
+
+        System.out.print("Lütfen kimya notunuzu giriniz: ");
+        kimya = inp.nextDouble();
+        if(kimya<0 || kimya>100){
+            System.out.println("Yanlış değer girdiniz.");
+        }else {
+            ortalamaSayma++;
+            degerler+=kimya;
+        }
+
+        System.out.print("Lütfen müzik notunuzu giriniz: ");
+        muzik = inp.nextDouble();
+        if(muzik<0 || muzik>100){
+            System.out.println("Yanlış değer girdiniz.");
+        }else {
+            ortalamaSayma++;
+            degerler+=muzik;
+        }
+
+        double ortalama = degerler / ortalamaSayma;
+
+        System.out.println("Ortalamanız: " + ortalama);
+
+        if(ortalama<55){
+            System.out.println("Kaldınız.");
+        }else {
+            System.out.println("Geçtiniz.");
+        }
+
+    }
+
+}

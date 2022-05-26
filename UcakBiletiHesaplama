@@ -1,0 +1,86 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        int yas, yolculukTipi;
+        double km, indirim12 = 0.50, indirim24 = 0.10, indirim65 = 0.30, kmBasiFiyat = 0.10, tutar, gidisDonusIndirimi = 0.20;
+        boolean hataMesaji = false;
+
+        Scanner inp = new Scanner(System.in);
+        System.out.print("Yaşınızı giriniz: ");
+        yas = inp.nextInt();
+
+        System.out.print("Mesafeyi Km türünden giriniz: ");
+        km = inp.nextDouble();
+
+        System.out.print("Yolculuk Tipi Seçiniz(1-Tek Yön, 2-Gidiş Dönüş): ");
+        yolculukTipi = inp.nextInt();
+        tutar = km * kmBasiFiyat;
+
+        if (km > 0) {
+            switch (yolculukTipi) {
+                case 1:
+                    if (yas < 12) {
+                        double yasIndirimi = tutar * indirim12;
+                        double yeniTutar = tutar - yasIndirimi;
+                        System.out.println("Toplam Tutar: " + yeniTutar);
+                    } else if (yas >= 12 && yas <= 24) {
+                        double yasIndirimi = tutar * indirim24;
+                        double yeniTutar = tutar - yasIndirimi;
+                        System.out.println("Toplam Tutar: " + yeniTutar);
+                    } else if (yas > 65) {
+                        double yasIndirimi = tutar * indirim65;
+                        double yeniTutar = tutar - yasIndirimi;
+                        System.out.println("Toplam Tutar: " + yeniTutar);
+                    } else if (yas > 24 && yas < 65) {
+                        System.out.println("Toplam Tutar" + tutar);
+                    } else {
+                        hataMesaji = true;
+                    }
+                    break;
+                case 2:
+
+                    if (yas < 12) {
+                        double yasIndirimi = tutar * indirim12;
+                        double indirimliTutar = (tutar - yasIndirimi);
+                        double biletIndirimi = indirimliTutar * gidisDonusIndirimi;
+                        double yeniTutar = indirimliTutar - biletIndirimi;
+                        System.out.println("Toplam Tutar: " + yeniTutar);
+                    } else if (yas >= 12 && yas <= 24) {
+                        double yasIndirimi = tutar * indirim24;
+                        double indirimliTutar = (tutar - yasIndirimi);
+                        double biletIndirimi = indirimliTutar * gidisDonusIndirimi;
+                        double yeniTutar = indirimliTutar - biletIndirimi;
+                        System.out.println("Toplam Tutar: " + yeniTutar);
+                    } else if (yas > 65) {
+                        double yasIndirimi = tutar * indirim65;
+                        double indirimliTutar = (tutar - yasIndirimi);
+                        double biletIndirimi = indirimliTutar * gidisDonusIndirimi;
+                        double yeniTutar = indirimliTutar - biletIndirimi;
+                        System.out.println("Toplam Tutar: " + yeniTutar);
+                    } else if (yas > 24 && yas < 65) {
+                        double biletIndirimi = tutar * gidisDonusIndirimi;
+                        double yeniTutar = tutar - biletIndirimi;
+                        ;
+                        System.out.println("Toplam Tutar" + yeniTutar);
+                    } else {
+                        hataMesaji = true;
+                    }
+                    break;
+                default:
+                    hataMesaji = true;
+                    break;
+            }
+
+        } else {
+            hataMesaji = true;
+        }
+
+        if (hataMesaji) {
+            System.out.println("Hatalı Veri Girdiniz!");
+        } else {
+            System.out.println("Hayırlı Yolculuklar");
+        }
+
+    }
+}

@@ -1,0 +1,27 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        int sicaklik;
+
+        Scanner inp = new Scanner(System.in);
+        System.out.print("Sıcaklık Değerini Giriniz(Derece Cinsinden): ");
+        sicaklik = inp.nextInt();
+
+
+        if (sicaklik < 5) {
+            System.out.println("Kayak yapabilirsiniz.");
+        } else if (sicaklik <= 15) {
+            System.out.println("Sinemaya gidebilirsiniz.");
+            if (sicaklik >= 10) {
+                System.out.println("Piknige gidebilirsiniz.");
+            }
+        } else {
+            if (sicaklik <= 25) {
+                System.out.println("Piknige gidebilirsiniz.");
+            } else {
+                System.out.println("Yuzmeye gidebilirsiniz.");
+            }
+        }
+    }
+}

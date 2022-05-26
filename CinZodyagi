@@ -10,7 +10,7 @@ public class Main {
         System.out.print("Doğum tarihinizi giriniz: ");
         dogumTarihi = inp.nextInt();
 
-        if(dogumTarihi>0){
+        if(dogumTarihi>1900){
             int bolumKalan = (dogumTarihi % 12);
             switch (bolumKalan){
                 case 0:

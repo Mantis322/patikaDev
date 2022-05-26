@@ -1,0 +1,39 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        int yil;
+        boolean hataMesaji = false;
+        boolean artikMi = false;
+
+        Scanner inp = new Scanner(System.in);
+        System.out.print("Yılı giriniz: ");
+        yil = inp.nextInt();
+
+        if (yil > 0) {
+            if (yil % 4 == 0 ){
+            artikMi = true;
+            }else if (yil % 100 == 0){
+                if (yil % 400 ==0){
+                    artikMi= true;
+                }else {
+                    artikMi = false;
+                }
+            }else {
+                artikMi = false;
+            }
+        }else {
+            hataMesaji = true;
+        }
+        if (artikMi){
+            System.out.println(yil+ " Bir artık yıldır.");
+        }else {
+            System.out.println(yil+ " Bir artık yıl değildir.");
+        }
+        if (hataMesaji){
+            System.out.println("Bir hata meydana geldi.");
+        } else {
+            System.out.println("Program bitti");
+        }
+    }
+}

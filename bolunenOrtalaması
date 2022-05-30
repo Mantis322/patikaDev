@@ -1,0 +1,30 @@
+//hata ayıklaması göz ardı edilmiştir.
+
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        int k, uceBolunen=0, dordeBolunen=0, ortalamaSayma3=0, ortalamaSayma4=0;
+
+        Scanner inp = new Scanner(System.in);
+        System.out.print("Lütfen sayı giriniz: ");
+        k = inp.nextInt();
+
+        for (int i = 1; i <= k; i++) {
+            if (i % 3 == 0) {
+                uceBolunen += i;
+                ortalamaSayma3++;
+            } else if (i % 4 == 0) {
+                dordeBolunen += i;
+                ortalamaSayma4++;
+            }
+
+        }
+        double ortalamaHesaplama3 = (uceBolunen / ortalamaSayma3);
+        double ortalamaHesaplama4 = (dordeBolunen / ortalamaSayma4);
+
+        System.out.println("3' e bolunenlerin ortalaması: " + ortalamaHesaplama3);
+        System.out.println("4' e bolunenlerin ortalaması: " + ortalamaHesaplama4);
+
+    }
+}

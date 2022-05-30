@@ -1,0 +1,19 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        int k;
+        double toplam =0;
+
+
+        Scanner inp = new Scanner(System.in);
+        System.out.print("Lütfen sayı giriniz: ");
+        k= inp.nextInt();
+
+        for (double i =1 ; i<=k;i++){
+            toplam += (1/i);
+        }
+        System.out.println("Sonuç: "+ toplam);
+    }
+
+}

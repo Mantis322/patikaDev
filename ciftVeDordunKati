@@ -11,7 +11,7 @@ public class Main {
         do{
             System.out.print("Lütfen sayı giriniz(tek sayı girildiğinde döngü biter): ");
             k = inp.nextInt();
-            if ((k % 2 ==0) && (k % 4 ==0)){
+            if (k % 4 ==0){
                 bolunebilen += k;
             }
         }while (k % 2 != 1);

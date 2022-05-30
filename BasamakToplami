@@ -1,0 +1,20 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        int number,basamakDegeri,toplam = 0;
+
+        Scanner inp = new Scanner(System.in);
+        System.out.print("Lütfen sayıyı giriniz: ");
+        number = inp.nextInt();
+        int tempNumber = number;
+
+        while(tempNumber !=0){
+            basamakDegeri = tempNumber % 10;
+            tempNumber/=10;
+            System.out.println(basamakDegeri);
+            toplam += basamakDegeri;
+        }
+        System.out.println("Basamaklar toplamı:" + toplam);
+    }
+}

@@ -1,0 +1,28 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        int k;
+
+        Scanner inp = new Scanner(System.in);
+        System.out.print("Bir sayı giriniz: ");
+        k = inp.nextInt();
+
+        for (int i = 1; i <= k; i++) {
+            for (int j = 1; j <= (k - i); j++) {
+                System.out.print(" ");
+            }
+            for (int x = 1; x <= (2 * i) - 1; x++) {
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+        for (int l = 1; l <= k; l++) {
+            for (int n = 1; n <= l; n++) {
+                System.out.print(" ");
+            }
+            for (int m = 1; m <= (2 * (k - l)) - 1; m++) {
+                System.out.print("*");
+            }
+            System.out.println();
+        }

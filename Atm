@@ -1,0 +1,72 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        String userName, password;
+        Scanner inp = new Scanner(System.in);
+        int right = 3;
+        int balance = 1500;
+        int select;
+
+        while (right > 0) {
+            System.out.print("Kullanıcı Adınız :");
+            userName = inp.nextLine();
+            System.out.print("Parolanız : ");
+            password = inp.nextLine();
+            if (userName.equals("patika") && password.equals("dev123")) {
+                System.out.println("Merhaba, Kodluyoruz Bankasına Hoşgeldiniz!");
+
+                System.out.println("1-Para yatırma\n" +
+                        "2-Para Çekme\n" +
+                        "3-Bakiye Sorgula\n" +
+                        "4-Çıkış Yap");
+                System.out.print("Lütfen yapmak istediğiniz işlemi seçiniz : ");
+
+                select = inp.nextInt();
+
+                switch (select) {
+                    case 1:
+                        System.out.print("Yatırma miktarını giriniz: ");
+                        int price = inp.nextInt();
+                        int yeniBakiye1= balance + price;
+                        System.out.println("Yeni bakiyeniz: " + yeniBakiye1);
+                        break;
+                    case 2:
+                        System.out.print("Çekmek istediğin miktarı giriniz: ");
+                        int price2 = inp.nextInt();
+                        if (price2 > balance) {
+                            System.out.println("Bakiyeniz yetersiz: ");
+                        } else {
+                           int yeniBakiye = balance - price2;
+                            System.out.println("Yeni bakiyeniz: " + yeniBakiye);
+                        }
+                        break;
+                    case 3:
+                        System.out.println("Bakiyeniz: " + balance);
+                        break;
+                    case 4:
+                        System.out.println("Görüşmek üzere.");
+                        break;
+                    default:
+                        System.out.println("Yanlış tuşlama girdiniz");
+                        break;
+                }
+
+
+            } else {
+                if (right == 0) {
+                    System.out.println("Hesabınız bloke olmuştur lütfen banka ile iletişime geçiniz.");
+                }else{
+                    System.out.println("Kalan Hakkınız : " + right);
+                right--;
+                System.out.println("Hatalı kullanıcı adı veya şifre. Tekrar deneyiniz.");
+            }
+
+            }
+            break;
+        }
+
+
+    }
+
+}

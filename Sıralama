@@ -1,0 +1,29 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        int k = 1, enBuyuk = 0, enKucuk = 0;
+        Scanner inp = new Scanner(System.in);
+        System.out.print("Kaç adet sayı girmek istersiniz ?: ");
+        k = inp.nextInt();
+
+        for (int i = 1; i <= k; i++) {
+            System.out.print(i + ". Sayıyı giriniz: ");
+            int l = inp.nextInt();
+            if (i == 1) {
+                enBuyuk = l;
+                enKucuk = l;
+            } else {
+                if (l > enBuyuk) {
+                    enBuyuk = l;
+                } else if (l < enKucuk) {
+                    enKucuk = l;
+                }
+            }
+
+        }
+        System.out.println("En büyük sayı: " + enBuyuk);
+        System.out.println("En küçük sayı: " + enKucuk);
+
+    }
+}

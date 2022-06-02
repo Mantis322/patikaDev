@@ -1,0 +1,21 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        int k;
+
+        Scanner inp = new Scanner(System.in);
+        System.out.print("Lütfen sayı giriniz: ");
+        k = inp.nextInt();
+
+        for (int i = 1;i<=k;i++){
+            for (int j =1;j<i;j++){
+                System.out.print(" ");
+            }
+            for (int n = 1;n<=(2*(k-i))-1;n++){
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+    }
+}

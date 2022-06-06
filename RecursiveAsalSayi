@@ -1,0 +1,28 @@
+import java.util.Scanner;
+
+public class Main {
+
+    static boolean isAsal(int n, int m){
+
+        if(n <= 2){
+            return (n == 2) ? true : false;
+        }
+        if(m == n){
+            return true;
+        }
+        if(n % m == 0){
+            return false;
+        }
+        return isAsal(n, m+1);
+    }
+
+
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        System.out.print("Taban değeri giriniz :");
+        int base = scan.nextInt();
+        int m = 2;
+        System.out.println(isAsal(base,m));
+
+    }
+}

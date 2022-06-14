@@ -1,0 +1,23 @@
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner inp = new Scanner(System.in);
+        System.out.print("Dizi boyutu giriniz: ");
+        int giris = inp.nextInt();
+
+        int[] numbers = new int[giris];
+
+        for (int i = 0; i < giris; i++) {
+
+            System.out.print((i+1) + ". Sayı giriniz: ");
+            int sayi = inp.nextInt();
+            numbers[i] = sayi;
+
+        }
+        Arrays.sort(numbers);
+        System.out.println(Arrays.toString(numbers));
+
+    }
+}

@@ -1,0 +1,27 @@
+import java.util.Arrays;
+import java.util.Scanner;
+public class Main {
+
+    public static void main(String[] args) {
+        int[] numbers = {15, 12, 788, 1, -1, -778, 2, 0};
+
+
+        Scanner inp = new Scanner(System.in);
+        System.out.print("Lütfen bir sayı giriniz: ");
+        int sayi = inp.nextInt();
+
+        Arrays.sort(numbers);
+
+
+        for (int i = 0;i< numbers.length;i++){
+            if (sayi<numbers[i]){
+                System.out.println("Girilen sayı: " + sayi);
+                System.out.println("Girilen sayıdan küçük en yakın sayı :" + numbers[i]);
+                System.out.println("Girilen sayıdan büyük en yakın sayı :" +numbers[i-1]);
+                break;
+            }
+        }
+
+
+    }
+}

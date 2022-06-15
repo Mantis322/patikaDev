@@ -1,0 +1,61 @@
+import java.util.Scanner;
+import java.util.Arrays;
+
+public class Main {
+    public static void main(String[] args) {
+        int life = 0, choose, totalLife = 5;
+        boolean isWin= false;
+        boolean isWrong = false;
+
+        int number = (int) (Math.random() * 100);
+        Scanner inp = new Scanner(System.in);
+        int[] choosen = new int[totalLife];
+
+
+        while (life < totalLife) {
+            System.out.print("Lütfen bir sayı giriniz: ");
+            choose = inp.nextInt();
+
+            if (choose < 0 && choose > 100) {
+                System.out.println("Lütfen 0 ile 100 arasında bir sayı giriniz: ");
+                if(isWrong){
+                    life++;
+                    System.out.println("Kalan hakkınız: " + (totalLife - life));
+                }else {
+                    isWrong = true;
+                    System.out.println("Bir dahaki sınır dışı girişinizde canınızdan düşülecektir.");
+                }
+                continue;
+            }
+
+            if (choose == number){
+                System.out.println("Tebrikler sayıyı bildiniz.");
+                isWin = true;
+                break;
+            } else {
+                System.out.println("Gizli sayıyı bulamadınız.");
+
+                if (choose > number){
+                    System.out.println("Seçtiğiniz sayı gizli sayıdan büyüktür.");
+
+                }else {
+                    System.out.println("Seçtiğiniz sayı gizli sayıdan küçüktür.");
+
+                }
+                choosen[life] = choose;
+                System.out.println("Kalan Canınız: " + (totalLife - life));
+                life++;
+            }
+
+        }
+
+        if (!isWin){
+            System.out.println("Kaybettiniz.");
+            System.out.println("Gizli Numara: " + number);
+            if (!isWrong){
+                System.out.println("Tahminleriniz: " + Arrays.toString(choosen));
+            }
+        }
+
+    }
+}
